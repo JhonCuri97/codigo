@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <form action="{%url 'calculadora:enviar' %}" method="post">
+        {% csrf_token %}
+        <h1>Calculadora</h1>
+        INgrese numero: <input type="text" name="n1"></br>
+        Ingrese numero: <input type="text" name="n2"></br>
+        <input type="submit" name="enviar" value="enviar"/>
+    </form>
+</body>
+</html>

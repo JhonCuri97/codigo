@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{titulo}}</title>
+</head>
+<body>
+    <h1>{{titulo}}</h1>
+    <form action="{%url 'encuesta:enviar' %}" method="post">
+        {% csrf_token %}
+        NOMBRE: <input type="text" name="nombre"></br>
+        EMAIL: <input type="text" name="email"></br>
+        PERFIL:
+        <select name="perfil">
+            <option> fullstack </option>
+            <option> backend </option>
+            <option> frontend </option>
+        </select></br>
+        IDIOMAS:
+        <input type="checkbox" name="idiomas" value="español" checked="checked">español</input>
+        <input type="checkbox" name="idiomas" value="ingles" >ingles</input>
+        <input type="checkbox" name="idiomas" value="frances" >frances</input>
+        <input type="checkbox" name="idiomas" value="aleman" >aleman</input></br>
+        GITHUB: <input type="text" name="github"></br>
+        <input type="submit" name="enviar" value="enviar encuesta"/>
+    </form>
+</body>
+</html>
